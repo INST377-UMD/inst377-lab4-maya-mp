@@ -1,0 +1,24 @@
+body{
+    background-color:lightskyblue;
+}
+
+.content-box {
+    width: 35%;
+    height:20%;
+    background-color:blueviolet;
+    color: whitesmoke;
+    padding: 30px;
+    margin: 15px;
+    border: 3pt solid white;
+    position: relative;
+    float:left
+}
+
+.content-box form{
+    text-align: center;
+}
+
+.content-box button{
+    text-align: center;
+}
+
