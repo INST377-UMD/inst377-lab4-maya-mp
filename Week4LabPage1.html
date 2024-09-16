@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <link rel="stylesheet" 
+        href = "Week4LabCSS.css">
+    </head>
+
+    <body>
+        <title>INST 377-Lab 4</title>
+        <header>
+            <h1>INST 377 - Lab 4</h1>
+        </header>
+
+        <!--Alert Me-->
+        <div class="content-box">
+            <form name="contactForm" onsubmit="return(formValidation())">
+                <label>Name:</label>
+                <input type="text" placeholder="Name" id="firstName" required>
+                <br>
+                <input type="submit" value="Alert Me!">
+
+                <script type="text/javascript">
+                    var inputted_name = document.contactForm.firstName.value
+                    function formValidation() {
+                    var inputted_name = document.contactForm.firstName.value;
+                        if (inputted_name != "") {
+                            alert("Hi " + inputted_name);
+                            return false;}}
+                </script>
+            </form>
+        </div>
+
+        <!--Change Color-->
+        <div class="content-box">
+            <button onclick="changeColor()">Change Color</button>
+
+            <script type="text/javascript">
+                var body_format = document.body 
+                function changeColor() {
+                    if (document.body.style.backgroundColor == "lightskyblue") {
+                        document.body.style.backgroundColor = "pink";
+                    } else {
+                        document.body.style.backgroundColor = "lightskyblue";}}
+            </script>
+        </div>
+
+        <!--Text Tester-->
+        <div class="content-box">
+            <form name="textTest" onsubmit="return(textValidation())">
+                <label>Text Tester: </label>
+                <input type="text" placeholder="inputted_text" id="textForVal">
+                <br>
+                <input type="submit">
+            </form>
+    
+            <script type="text/javascript">
+            function textValidation() {
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(document.textTest.textForVal.value)) {
+                    alert('Special Character is Present');
+                    return false;}
+                return true;}
+            </script>
+        </div>
+
+        <!--Add Text-->
+        <div class="content-box">
+            <button onclick="addText()">Add Text</button>
+            <script type="text/javascript">
+            let t = document.querySelector("header h1")
+            function addText() {t.textContent = t.textContent + " + Added Text :)"
+                return false;}
+            </script>
+        </div>
+    </body>
+</html>
